@@ -14,5 +14,5 @@ Once you install Docker and Nvidia Toolkit, you need to get the path of where th
 1. Go to the desire destination in this case the home directory for the current user with `cd ~`
 2. Create the jellyfin directory and enter that directory `mkdir jellyfin && cd jellyfin`
 3. Clone the repo with `git clone https://github.com/CodeFallacy/Jellyfin-NVIDIA-Docker-Compose.git`
-4. Modify the `.env` file. set `COMMON_PATH` with the path of Jellyfin directory we just created. in this case `/home/username/jellyfin`
+4. Rename `example.env` file to `.env` and set `COMMON_PATH` with the path of Jellyfin directory we just created. in this case `/home/username/jellyfin`
 5. Then start the container in detached mode with `docker compose up -d`
