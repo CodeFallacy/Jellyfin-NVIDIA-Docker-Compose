@@ -1,0 +1,21 @@
+networks:
+  backend:
+    name: backend
+    external: true
+
+services:
+  jellyfin:
+    image: jellyfin/jellyfin:latest
+    user: 1000:1000
+    networks:
+      - backend
+    volumes:
+      - ${COMMON_PATH}/config:/config
+      - ${COMMON_PATH}/media:/media
+      - ${COMMON_PATH}/media/cache:/cache
+    runtime: nvidia
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]
